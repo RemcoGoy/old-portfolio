@@ -1,13 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar
-      app
-      dark
-      flat
-      absolute
-      elevate-on-scroll
-      scroll-target="#mainContent"
-    >
+    <v-app-bar app dark absolute :flat="isFlat">
       <v-toolbar-title>Portfolio</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
@@ -20,17 +13,19 @@
 
     <v-content>
       <Header />
-      <v-container fluid id="mainContent"></v-container>
+      <AboutMe />
     </v-content>
   </v-app>
 </template>
 
 <script>
 import Header from "./components/Header";
+import AboutMe from "./components/AboutMe";
 
 export default {
   components: {
     Header,
+    AboutMe,
   },
   props: {
     source: String,
@@ -38,7 +33,14 @@ export default {
   data() {
     return {
       menu: [{ icon: "fa-folder", title: "projects" }],
+      isFlat: true,
     };
   },
 };
 </script>
+
+<style lang="scss" scoped>
+header {
+  position: fixed !important;
+}
+</style>
