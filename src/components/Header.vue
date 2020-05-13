@@ -1,28 +1,24 @@
 <template>
   <div class="header">
     <v-container>
-      <div class="helloText">hello<span class="dotSpan">.</span></div>
-      <div class="mainText">
-        I'm Remco Goyvaerts
+      <div class="helloText">
+        <span>hello</span>
+        <span class="dotSpan">.</span>
       </div>
+      <div class="mainText">I'm Remco Goyvaerts</div>
       <v-divider></v-divider>
       <div class="subText">
-        A student <span class="dotSpan">Artificial Intelligence</span> from
+        A student
+        <span class="dotSpan">Artificial Intelligence</span> from
         Belgium
       </div>
 
       <div class="btnGroup">
         <v-btn outlined color="blue lighten-2" class="contactBtn">
-          <v-icon left color="blue lighten-2" class="ml-2 mr-4">
-            fa-envelope
-          </v-icon>
-          Contact me
+          <v-icon left color="blue lighten-2" class="ml-2 mr-4">fa-envelope</v-icon>Contact me
         </v-btn>
         <v-btn outlined color="blue lighten-2">
-          <v-icon left color="blue lighten-2" class="ml-2 mr-4">
-            fa-id-card
-          </v-icon>
-          My CV
+          <v-icon left color="blue lighten-2" class="ml-2 mr-4">fa-id-card</v-icon>My CV
         </v-btn>
       </div>
     </v-container>
@@ -40,11 +36,12 @@ export default { name: "Header" };
   font-family: "Comfortaa", cursive;
   font-size: 3.2rem;
   font-weight: 300;
+  margin-right: -2%;
 }
 
 .header {
   padding-top: 3%;
-  height: 50%;
+  height: 45vh;
   width: 100%;
   background: #272727;
 }
