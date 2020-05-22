@@ -2,7 +2,7 @@
   <div class="aboutMe">
     <v-container>
       <v-row>
-        <v-col :lg="7">
+        <v-col cols="7">
           <div class="aboutHeader">About me</div>
           <v-list class="aboutList">
             <v-list-item class="aboutItem">
@@ -54,8 +54,8 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col :lg="1"></v-col>
-        <v-col :lg="4">
+        <v-col cols="1"></v-col>
+        <v-col cols="4">
           <v-img class="profileImage" src="../assets/profile.jpg" aspect-ratio="1"></v-img>
         </v-col>
       </v-row>
