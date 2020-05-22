@@ -73,7 +73,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;600&display=swap");
 
 .aboutMe {
-  height: 80vh;
+  height: 100%;
   width: 100%;
   background: white;
   padding-top: 3%;

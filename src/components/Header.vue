@@ -66,7 +66,8 @@ export default {
 
 .header {
   padding-top: 3%;
-  height: 45vh;
+  padding-bottom: 3%;
+  height: 100%;
   width: 100%;
   background: #272727;
 }

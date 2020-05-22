@@ -16,7 +16,9 @@
     </v-app-bar>
 
     <v-content>
-      <Header />
+      <div>
+        <Header />
+      </div>
       <div ref="aboutMe">
         <AboutMe />
       </div>
