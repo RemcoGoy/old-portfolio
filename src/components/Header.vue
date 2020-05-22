@@ -15,9 +15,11 @@
 
       <div class="btnGroup">
         <v-btn outlined color="blue lighten-2" class="contactBtn">
-          <v-icon left color="blue lighten-2" class="ml-2 mr-4">fa-envelope</v-icon>Contact me
+          <a href="mailto:remco.goy@hotmail.com">
+            <v-icon left color="blue lighten-2" class="ml-2 mr-4">fa-envelope</v-icon>Contact me
+          </a>
         </v-btn>
-        <v-btn outlined color="blue lighten-2">
+        <v-btn outlined color="blue lighten-2" @click="downloadPdf">
           <v-icon left color="blue lighten-2" class="ml-2 mr-4">fa-id-card</v-icon>My CV
         </v-btn>
       </div>
@@ -26,7 +28,30 @@
 </template>
 
 <script>
-export default { name: "Header" };
+export default {
+  name: "Header",
+  methods: {
+    forceFileDownload (response) {
+      const url = window.URL.createObjectURL(new Blob([response.data]))
+      const link = document.createElement('a')
+      link.href = url
+      link.setAttribute('download', 'CV_RemcoGoyvaerts.pdf')
+      document.body.appendChild(link)
+      link.click()
+    },
+    downloadPdf () {
+      this.$http({
+        method: 'get',
+        url: '/CV_RemcoGoyvaerts.pdf',
+        responseType: 'arraybuffer'
+      })
+        .then(response => {
+          this.forceFileDownload(response)
+        })
+        .catch(() => console.log('error occured'))
+
+    },
+  }};
 </script>
 
 <style lang="scss" scoped>
@@ -69,5 +94,10 @@ export default { name: "Header" };
 
 .contactBtn {
   margin-right: 1%;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none;
 }
 </style>
