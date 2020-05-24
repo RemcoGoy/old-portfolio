@@ -3,8 +3,8 @@
     <v-card flat tile width="100%" class="text-center">
       <v-card-text>
         <v-btn v-for="icon in icons" :key="icon.icon" class="mx-4" icon>
-          <a :href="icon.url">
-            <v-icon size="24px">{{ icon.icon }}</v-icon>
+          <a :href="icon.url" target="_blank">
+            <v-icon>{{ icon.icon }}</v-icon>
           </a>
         </v-btn>
       </v-card-text>
@@ -24,8 +24,8 @@ export default {
   name: 'Footer',
   data: () => ({
     icons: [
-      { icon: 'mdi-linkedin', url: 'https://www.linkedin.com/in/remco-goyvaerts-7878a945/' },
-      { icon: 'mdi-email', url: 'mailto:remco.goy@hotmail.com' },
+      { icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/remco-goyvaerts-7878a945/' },
+      { icon: 'fab fa-github', url: 'https://github.com/RemcoGoy' },
     ]
   })
 }
